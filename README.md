@@ -36,7 +36,7 @@ python -m streamlit run app.py
 
 ## Live Demo 🔎
 
-- You can access a live demo clicking [**here**](future-livedemo)!
+- You can access a live demo clicking [**here**](https://magic-pantry.streamlit.app/)!
 
 ## Screenshot 📷
 

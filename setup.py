@@ -4,13 +4,11 @@ print("Setup started...")
 print("Downloading packages...")
 
 """
-Set required packages and download them.
+Get required packages and download them.
 """
-required_packages = [
-    "streamlit==1.34.0",
-    "python-dotenv==1.0.1",
-    "google-generativeai==0.5.2",
-]
+
+with open("./requirements.txt", "r") as requirements:
+    required_packages = [line.strip() for line in requirements.readlines()]
 
 for package in required_packages:
     shell(f'pip install -q -U {package} --break-system-package')
