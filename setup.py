@@ -6,7 +6,6 @@ print("Downloading packages...")
 """
 Get required packages and download them.
 """
-
 with open("./requirements.txt", "r") as requirements:
     required_packages = [line.strip() for line in requirements.readlines()]
 

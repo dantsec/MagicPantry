@@ -9,8 +9,8 @@ try:
     # Lib's to load environment variables.
     from os import getenv
     from dotenv import load_dotenv
-    # Model variables.
-    from packages.model_config import *
+    # Model config variables.
+    from utils.model_config import *
 except ModuleNotFoundError:
     raise Exception("Failed to import packages!")
 
@@ -18,7 +18,7 @@ except ModuleNotFoundError:
 #
 # Load Google Gemini principal variables.
 #
-def load_gemini():
+def load_gemini() -> None:
     load_dotenv(override=True)
     genai.configure(api_key=getenv("GOOGLE_GEMINI_API_KEY"))
 
@@ -26,7 +26,7 @@ def load_gemini():
 #
 # Set up the model.
 #
-def setup_model():
+def setup_model() -> genai.GenerativeModel:
     return genai.GenerativeModel(
         model_name=MODEL_NAME,
         generation_config=GENERATION_CONFIG,
@@ -38,7 +38,7 @@ def setup_model():
 #
 # Setup page config.
 #
-def load_steamlit_header():
+def load_steamlit_header() -> None:
     st.set_page_config(
         page_title="Magic Pantry @ Gemini AI Project",
         page_icon="🍳",
@@ -53,6 +53,9 @@ def load_steamlit_header():
     st.divider()
 
 
+#
+# Return the chatbot text icon type (user or model).
+#
 def role_to_streamlit(role):
   if role == "model":
     return "assistant"
@@ -63,7 +66,7 @@ def role_to_streamlit(role):
 #
 # Setup streamlit.
 #
-def main():
+def main() -> None:
     load_gemini()
     model = setup_model()
 
@@ -74,9 +77,11 @@ def main():
     # Page setup.    
     load_steamlit_header()
 
+    # For init, show just bot instructions message.
     for message in st.session_state.chat.history:
-        with st.chat_message(role_to_streamlit(message.role)):
-            st.markdown(message.parts[0].text)
+        if "Vamos pensar passo a passo." not in message.parts[0].text:
+            with st.chat_message(role_to_streamlit(message.role)):
+                st.markdown(message.parts[0].text)
 
     # Accept user's next message, add to context, resubmit context to Gemini and show the received response.
     if prompt := st.chat_input("What ingredients do you have now?"):

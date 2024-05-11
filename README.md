@@ -1,4 +1,12 @@
+<div align="center">
+
+  ![header](./docs/readme-header.png)
+
+</div>
+
 # Magic Pantry @ Gemini AI chatbot Project 🤖
+
+> Não sabe ler inglês? leia o README.md em _pt-br_ clicando [**aqui**](./docs/README-PTBR.md)!
 
 > Magic Pantry: Discover what to cook with what you have. Unlock the magic of your pantry with this tool! Let us reveal the possibilities hidden in your ingredients, turning them into delicious meals.
 
@@ -6,7 +14,7 @@
 
 ## Authors 👥
 
-- My name is Cauê and I'm graduating in Systems Development Technician at ETEC. I love technology and always seek to learn new knowledge. I am currently interning as a fullstack developer and learning about AI in Alura's immersion was very useful, as it is a growing company.
+- My name is Cauê and I'm graduating in Systems Development Technician at ETEC. I love technology and always seek to learn new knowledge. I am currently interning as a fullstack developer and learning about AI in Alura's immersion was very useful, as it is a growing field.
   - [**@dantsec**](https://www.github.com/dantsec)
 
 ## Tech Stack 🧑‍💻
@@ -15,13 +23,18 @@
   - [**Python**](https://www.python.org/) (Main Language)
     - [**Streamlit**](https://streamlit.io/) (Web Server)
 
+## Documents 📂
+
+- [**MIT License**](./LICENSE)
+- [**Usability Example**](./docs/usability-example.pdf)
+
 ## Installation / Run Locally ⚙️
 
 - **Important**: First of all, you must have [**Python 3 installed**](https://www.python.org/).
 
 - Clone and enter in the project:
 ```bash
-git clone https://github.com/MagicPantry.git && cd MagicPantry/
+git clone https://github.com/dantsec/MagicPantry.git && cd MagicPantry/
 ```
 
 - Run `setup.py`
@@ -51,6 +64,16 @@ python -m streamlit run app.py
 > Leaving the context of AI utility.
 
 ![offtopic](./docs/screenshots/offtopic.png)
+
+# Todo List 📌
+
+- Priority (**1**)
+  - 
+- Priority (**2**)
+  - [ ] When the user sends a photo of a food, the model will provide the possible recipe.
+    - https://discuss.streamlit.io/t/adding-in-streamlit-chat-input-the-possibility-to-add-an-image/55156/3
+- Priority (**3**)
+  - [ ] Implement `venv`.
 
 ## Contributing 🛠️
 
