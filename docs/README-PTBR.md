@@ -37,12 +37,12 @@ clone git https://github.com/dantsec/MagicPantry.git && cd MagicPantry/
 
 - Execute `setup.py`
 ```bash
-python setup.py
+python3 setup.py
 ```
 
 - Inicie o servidor
 ```bash
-python -m streamlit run app.py
+python3 -m streamlit run src/app.py
 ```
 
 ## Demonstração ao vivo 🔎

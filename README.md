@@ -39,12 +39,12 @@ git clone https://github.com/dantsec/MagicPantry.git && cd MagicPantry/
 
 - Run `setup.py`
 ```bash
-python setup.py
+python3 setup.py
 ```
 
 - Start the server
 ```bash
-python -m streamlit run app.py
+python3 -m streamlit run src/app.py
 ```
 
 ## Live Demo 🔎
@@ -68,7 +68,9 @@ python -m streamlit run app.py
 # Todo List 📌
 
 - Priority (**1**)
-  - 
+  - [ ] New pallete color.
+    - https://colorhunt.co/palettes/food-yellow-red-orange
+  - [ ] Button to clear chat.
 - Priority (**2**)
   - [ ] When the user sends a photo of a food, the model will provide the possible recipe.
     - https://discuss.streamlit.io/t/adding-in-streamlit-chat-input-the-possibility-to-add-an-image/55156/3

@@ -9,6 +9,8 @@ try:
     # Lib's to load environment variables.
     from os import getenv
     from dotenv import load_dotenv
+    # Sleep to avoid web-service errors (ResourceExhausted, google.api_core.exceptions.ResourceExhausted).
+    from time import sleep
     # Model config variables.
     from utils.model_config import *
 except ModuleNotFoundError:
@@ -86,8 +88,9 @@ def main() -> None:
     # Accept user's next message, add to context, resubmit context to Gemini and show the received response.
     if prompt := st.chat_input("What ingredients do you have now?"):
         st.chat_message("user").markdown(prompt)
-        
-        response = st.session_state.chat.send_message(prompt) 
+
+        response = st.session_state.chat.send_message(prompt)
+        sleep(3)
         
         with st.chat_message("assistant"):
             st.markdown(response.text)
