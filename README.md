@@ -65,7 +65,7 @@ python3 -m streamlit run src/app.py
 
 ![offtopic](./docs/screenshots/offtopic.png)
 
-# Todo List 📌
+## Todo List 📌
 
 - Priority (**1**)
   - [ ] New pallete color.
